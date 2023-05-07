@@ -41,7 +41,7 @@ class Account extends StatelessWidget {
             Text('Имя пользователя'),
             Divider(),
             Text(
-              'Бразильский зук, Бачата',
+              'Бразильский зук, Бачата,',
               style: TextStyle(
                 fontSize: 18,
               ),

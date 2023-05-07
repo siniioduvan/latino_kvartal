@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:latino_kvartal/future/drawer.dart';
+import 'package:latino_kvartal/pages/main_page.dart';
 import 'package:latino_kvartal/pages/user_profile.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,9 +9,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.dark(),
       home: Scaffold(
-        backgroundColor: Colors.black,
-        body: UserProfile(),
+        appBar: AppBar(),
+        body: MainPage(),
+        drawer: DrawerMainMenu(),
       ),
     );
   }
