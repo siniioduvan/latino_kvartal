@@ -1,37 +1,29 @@
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {
-  const MainPage({Key? key}) : super(key: key);
+  final List<PostData> postData = [
+    PostData(
+      'Разработчик С# показывает язык разработчику 1С',
+      'assets/images/news_pics/1.jpeg',
+    ),
+    PostData(
+      'Самара из фильма "Звонок" теперь танцует в Латинском Квартале',
+      'assets/images/news_pics/2.jpeg',
+    ),
+    PostData(
+      'Грустные вечеринки с грустными танцами. Не пропусти!',
+      'assets/images/news_pics/3.jpeg',
+    ),
+    PostData(
+      'Конкурс мокрых рубашек и больших сисек прошел на ура!',
+      'assets/images/news_pics/4.jpeg',
+    ),
+  ];
+
+  MainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List<String> imageAsset = [
-      'assets/images/news_pics/1.jpeg',
-      'assets/images/news_pics/1.jpeg',
-      'assets/images/news_pics/1.jpeg',
-      'assets/images/news_pics/1.jpeg',
-      'assets/images/news_pics/1.jpeg'
-    ];
-
-    List<String> news = [
-      'Яков показывает язык разработчику 1С',
-      'Яков показывает язык разработчику 1С',
-      'Яков показывает язык разработчику 1С',
-      'Яков показывает язык разработчику 1С',
-      'Яков показывает язык разработчику 1С',
-    ];
-
-    List<Widget>post = [];
-
-    for(var image in imageAsset){
-      for(var text in news){
-       final _widget = NewsPost(image: image, newsText: text);
-       post.add(_widget);
-      }
-    }
-
-    ///ПРОВЕРЬ АЛГОРИТМ ГЕНЕРАЦИИ ВИДЖЕТОВ!
-
     return Container(
       width: double.infinity,
       height: double.infinity,
@@ -42,7 +34,9 @@ class MainPage extends StatelessWidget {
               'Новости Латинского Квартала',
               style: TextStyle(fontSize: 25),
             ),
-            Column(children: post)
+            Column(
+              children: postData.map((data) => NewsPost(data: data)).toList(),
+            )
           ],
         ),
       ]),
@@ -50,11 +44,17 @@ class MainPage extends StatelessWidget {
   }
 }
 
-class NewsPost extends StatelessWidget {
-  const NewsPost({super.key, required this.image, required this.newsText});
-
+class PostData {
+  final String text;
   final String image;
-  final String newsText;
+
+  PostData(this.text, this.image);
+}
+
+class NewsPost extends StatelessWidget {
+  final PostData data;
+
+  const NewsPost({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -63,11 +63,11 @@ class NewsPost extends StatelessWidget {
         color: Colors.green,
         child: Column(
           children: [
-            Text(newsText),
+            Text(data.text),
             SizedBox(
               height: 6,
             ),
-            Image.asset(image)
+            Image.asset(data.image)
           ],
         ));
   }
