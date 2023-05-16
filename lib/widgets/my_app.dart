@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:latino_kvartal/future/drawer.dart';
 import 'package:latino_kvartal/pages/auth_page.dart';
-import 'package:latino_kvartal/pages/main_page.dart';
-import 'package:latino_kvartal/pages/user_profile.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -12,6 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark(),
       home: Scaffold(
+        drawer: DrawerMainMenu(),
         appBar: AppBar(actions: [
           IconButton(
             icon: const Icon(Icons.people_alt_outlined),
@@ -36,7 +35,6 @@ class MyApp extends StatelessWidget {
             child: AuthPage(),
           ),
         ),
-        drawer: DrawerMainMenu(),
       ),
     );
   }
