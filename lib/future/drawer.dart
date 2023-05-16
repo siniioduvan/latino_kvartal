@@ -9,7 +9,7 @@ class DrawerMainMenu extends StatelessWidget {
       'Направления',
       'Расписание',
       'Преподаватели',
-      'Направления',
+      'Контакты',
     ];
 
     List<Widget> drawerMenuData = [];
@@ -34,6 +34,8 @@ class DrawerMainMenu extends StatelessWidget {
     );
   }
 }
+
+///todo СДЕЛАТЬ ИКОНКИ МЕНЮ!!! ЧЕРЕЗ АССЕТЫ ПРОЧИЕ ПРИКОЛЮХИ!
 
 class DrawerListTile extends StatelessWidget {
   final String text;
