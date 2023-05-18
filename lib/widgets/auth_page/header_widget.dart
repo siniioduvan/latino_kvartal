@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({
@@ -16,9 +15,9 @@ class HeaderWidget extends StatelessWidget {
           SizedBox(height: 20,),
           Text(
               'Латинский квартал',
-              style: GoogleFonts.acme(fontSize: 36)
+              style: TextStyle(fontSize: 36)
           ),
-          Text('Войти:', style: GoogleFonts.acme(fontSize: 24)),
+          Text('Войти:', style: TextStyle(fontSize: 24)),
           SizedBox(height: 60,),
         ],
       ),

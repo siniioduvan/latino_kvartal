@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:latino_kvartal/widgets/auth_page/entry_field.dart';
 import 'package:latino_kvartal/widgets/auth_page/header_widget.dart';
 

@@ -15,10 +15,9 @@ class _EntryFieldState extends State<EntryField> {
   final _passwordTextController = TextEditingController();
   void _auth(){
     final login = _loginTextController.text;
-    final password = _passwordTextController;
+    final password = _passwordTextController.text;
     if (login == 'admin' && password == 'admin') {
-      print('Open App');
-      ///todo СДЕЛАЙ РАБОЧИЙ ПРИНТ!!!
+      print('open app');
     }
   }
 
@@ -61,6 +60,7 @@ class _EntryFieldState extends State<EntryField> {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: _passwordTextController,
+              obscureText: true,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
