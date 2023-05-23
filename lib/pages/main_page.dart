@@ -27,7 +27,16 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const DrawerMainMenu(),
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed('/userProfile');
+            },
+            icon: Icon(Icons.account_circle_outlined),
+          ),
+        ],
+      ),
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,

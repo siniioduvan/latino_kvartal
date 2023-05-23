@@ -5,18 +5,18 @@ class HeaderProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final iconData = [
-      Icons.qr_code_2,
-      Icons.find_in_page_outlined,
-      Icons.more_vert_outlined
-    ];
-
-    final List<Widget> iconButtonInHeader = [];
-
-    for (var icon in iconData) {
-      final widget = IconButtonInHeader(icon: icon);
-      iconButtonInHeader.add(widget);
-    }
+    // final iconData = [
+    //   Icons.qr_code_2,
+    //   Icons.find_in_page_outlined,
+    //   Icons.more_vert_outlined
+    // ];
+    //
+    // final List<Widget> iconButtonInHeader = [];
+    //
+    // for (var icon in iconData) {
+    //   final widget = IconButtonInHeader(icon: icon);
+    //   iconButtonInHeader.add(widget);
+    // }
 
     ///
     /// ВНИМАНИЕ!!! Переменные ниже должны задаваться из другого места!
@@ -30,10 +30,11 @@ class HeaderProfile extends StatelessWidget {
       height: 150,
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: iconButtonInHeader,
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.end,
+          //   children: iconButtonInHeader,
+          // ),
+          SizedBox(height: 24,),
           Container(
             height: 100,
             padding: const EdgeInsets.only(left: 5),
@@ -72,16 +73,16 @@ class HeaderProfile extends StatelessWidget {
   }
 }
 
-class IconButtonInHeader extends StatelessWidget {
-  final IconData icon;
-
-  const IconButtonInHeader({super.key, required this.icon});
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: () {},
-      icon: Icon(icon),
-    );
-  }
-}
+// class IconButtonInHeader extends StatelessWidget {
+//   final IconData icon;
+//
+//   const IconButtonInHeader({super.key, required this.icon});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return IconButton(
+//       onPressed: () {},
+//       icon: Icon(icon),
+//     );
+//   }
+// }

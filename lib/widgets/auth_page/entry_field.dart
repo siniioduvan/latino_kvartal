@@ -17,9 +17,7 @@ class _EntryFieldState extends State<EntryField> {
     final login = _loginTextController.text;
     final password = _passwordTextController.text;
     if (login == 'admin' && password == 'admin') {
-
-      ///todo сделать навигацию
-
+      Navigator.of(context).pushReplacementNamed('/mainPage');
     }else{
       showDialog<void>(
         context: context,
