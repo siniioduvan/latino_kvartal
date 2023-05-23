@@ -8,14 +8,32 @@ class AuthPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-        children: [
-          HeaderWidget(),
-          EntryField()
-        ],
+    return Scaffold(
+      body: Center(
+        child: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.deepPurple,
+                    Colors.deepOrange
+                  ]
+              )
+          ),
+          child: ListView(
+            children: const [
+              HeaderWidget(),
+              EntryField()
+            ],
+          )
+        ),
+      ),
     );
   }
 }
+
+
 
 
 

@@ -15,8 +15,8 @@ class DrawerMainMenu extends StatelessWidget {
     List<Widget> drawerMenuData = [];
 
     for (var text in drawerTextData) {
-      final _widget = DrawerListTile(text: text);
-      drawerMenuData.add(_widget);
+      final widget = DrawerListTile(text: text);
+      drawerMenuData.add(widget);
     }
 
     return Drawer(
@@ -24,7 +24,7 @@ class DrawerMainMenu extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
               decoration: BoxDecoration(color: Colors.deepPurple[400]),
-              child: Container(
+              child: SizedBox(
                   height: double.infinity,
                   width: double.infinity,
                   child: Image.asset("assets/images/main_logo.png"))),

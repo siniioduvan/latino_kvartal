@@ -26,15 +26,15 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: DrawerMainMenu(),
+      drawer: const DrawerMainMenu(),
       appBar: AppBar(),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: ListView(children: [
           Column(
             children: [
-              Text(
+              const Text(
                 'Новости Латинского Квартала',
                 style: TextStyle(fontSize: 25),
               ),
@@ -64,11 +64,11 @@ class NewsPost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: [
             Text(data.text),
-            SizedBox(
+            const SizedBox(
               height: 6,
             ),
             Image.asset(data.image)

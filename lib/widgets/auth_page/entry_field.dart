@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:latino_kvartal/pages/main_page.dart';
-import 'package:latino_kvartal/pages/user_profile.dart';
 
 class EntryField extends StatefulWidget {
   const EntryField({
@@ -19,20 +17,21 @@ class _EntryFieldState extends State<EntryField> {
     final login = _loginTextController.text;
     final password = _passwordTextController.text;
     if (login == 'admin' && password == 'admin') {
-      final navigator = Navigator.of(context);
-      navigator.push(MaterialPageRoute(builder: (context) => MainPage()));
+
+      ///todo сделать навигацию
+
     }else{
       showDialog<void>(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Неверный логин или пароль'),
+            title: const Text('Неверный логин или пароль'),
             content: const Text(''),
             elevation: 24,
             actions: <Widget>[
               Center(
                 child: ElevatedButton(
-                  child: Text('Ok'),
+                  child: const Text('Ok'),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -52,7 +51,7 @@ class _EntryFieldState extends State<EntryField> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Email:',
           ),
           Padding(
@@ -62,14 +61,14 @@ class _EntryFieldState extends State<EntryField> {
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.grey,
                     width: 1.0,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.green,
                     width: 2.0,
                   ),
@@ -77,7 +76,7 @@ class _EntryFieldState extends State<EntryField> {
               ),
             ),
           ),
-          Text(
+          const Text(
             'Пароль',
           ),
           Padding(
@@ -88,14 +87,14 @@ class _EntryFieldState extends State<EntryField> {
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.grey,
                     width: 1.0,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.green,
                     width: 2.0,
                   ),
@@ -103,13 +102,12 @@ class _EntryFieldState extends State<EntryField> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Center(
             child: ElevatedButton(
               onPressed: _auth,
-              child: Text('Войти через ВКонтакте'),
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all(Colors.deepPurpleAccent),
@@ -117,12 +115,13 @@ class _EntryFieldState extends State<EntryField> {
                   borderRadius: BorderRadius.circular(30)
                 ))
               ),
+              child: const Text('Войти через ВКонтакте'),
             ),
           ),
           Center(
             child: TextButton(
               onPressed: (){},
-              child: Text('Продолжить без регистрации',style: TextStyle(color: Colors.white),),
+              child: const Text('Продолжить без регистрации',style: TextStyle(color: Colors.white),),
             ),
           )
         ],

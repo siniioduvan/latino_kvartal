@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:latino_kvartal/future/drawer.dart';
-import 'package:latino_kvartal/pages/auth_page.dart';
+import 'package:latino_kvartal/pages/main_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -9,26 +8,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text('Авторизация')),
-        ),
-        body: Center(
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.deepPurple,
-                  Colors.deepOrange
-                ]
-              )
-            ),
-            child: AuthPage(),
-          ),
-        ),
-      ),
+      initialRoute: '/auth',
+      routes: {
+        '/auth': (context) => MainPage(),
+      },
     );
   }
 }

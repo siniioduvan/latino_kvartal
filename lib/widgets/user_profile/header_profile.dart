@@ -21,8 +21,8 @@ class HeaderProfile extends StatelessWidget {
     ///
     /// ВНИМАНИЕ!!! Переменные ниже должны задаваться из другого места!
     ///
-    final String name = "Антон";
-    final String online = 'Online';
+    const String name = "Антон";
+    const String online = 'Online';
 
     return Container(
       color: Colors.grey[500],
@@ -36,21 +36,21 @@ class HeaderProfile extends StatelessWidget {
           ),
           Container(
             height: 100,
-            padding: EdgeInsets.only(left: 5),
+            padding: const EdgeInsets.only(left: 5),
             child: Row(
               children: [
-                Container(
-                  child: Placeholder(),
+                const SizedBox(
                   height: 100,
                   width: 100,
+                  child: Placeholder(),
                 ),
-                SizedBox(width: 15),
-                Container(
+                const SizedBox(width: 15),
+                SizedBox(
                   width: 100,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       Text(
                         name,
                         style: TextStyle(fontSize: 25),

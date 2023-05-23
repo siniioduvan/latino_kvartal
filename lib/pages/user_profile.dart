@@ -11,7 +11,7 @@ class UserProfile extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [Column(
-          children: [
+          children: const [
             HeaderProfile(),
             Account(),
             SizedBox(
