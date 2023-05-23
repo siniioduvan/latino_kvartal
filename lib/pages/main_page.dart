@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:latino_kvartal/future/drawer.dart';
 
 class MainPage extends StatelessWidget {
   final List<PostData> postData = [
@@ -24,22 +25,26 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: double.infinity,
-      child: ListView(children: [
-        Column(
-          children: [
-            Text(
-              'Новости Латинского Квартала',
-              style: TextStyle(fontSize: 25),
-            ),
-            Column(
-              children: postData.map((data) => NewsPost(data: data)).toList(),
-            )
-          ],
-        ),
-      ]),
+    return Scaffold(
+      drawer: DrawerMainMenu(),
+      appBar: AppBar(),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: ListView(children: [
+          Column(
+            children: [
+              Text(
+                'Новости Латинского Квартала',
+                style: TextStyle(fontSize: 25),
+              ),
+              Column(
+                children: postData.map((data) => NewsPost(data: data)).toList(),
+              )
+            ],
+          ),
+        ]),
+      ),
     );
   }
 }

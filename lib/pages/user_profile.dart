@@ -8,17 +8,19 @@ class UserProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [Column(
-        children: [
-          HeaderProfile(),
-          Account(),
-          SizedBox(
-            height: 10,
-          ),
-          Settings(),
-        ],
-      ),
-    ]);
+    return Scaffold(
+      body: ListView(
+        children: [Column(
+          children: [
+            HeaderProfile(),
+            Account(),
+            SizedBox(
+              height: 10,
+            ),
+            Settings(),
+          ],
+        ),
+      ]),
+    );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:latino_kvartal/pages/main_page.dart';
+import 'package:latino_kvartal/pages/user_profile.dart';
 
 class EntryField extends StatefulWidget {
   const EntryField({
@@ -17,7 +19,29 @@ class _EntryFieldState extends State<EntryField> {
     final login = _loginTextController.text;
     final password = _passwordTextController.text;
     if (login == 'admin' && password == 'admin') {
-      print('open app');
+      final navigator = Navigator.of(context);
+      navigator.push(MaterialPageRoute(builder: (context) => MainPage()));
+    }else{
+      showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Неверный логин или пароль'),
+            content: const Text(''),
+            elevation: 24,
+            actions: <Widget>[
+              Center(
+                child: ElevatedButton(
+                  child: Text('Ok'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ),
+            ],
+          );
+        },
+      );
     }
   }
 
@@ -93,6 +117,12 @@ class _EntryFieldState extends State<EntryField> {
                   borderRadius: BorderRadius.circular(30)
                 ))
               ),
+            ),
+          ),
+          Center(
+            child: TextButton(
+              onPressed: (){},
+              child: Text('Продолжить без регистрации',style: TextStyle(color: Colors.white),),
             ),
           )
         ],

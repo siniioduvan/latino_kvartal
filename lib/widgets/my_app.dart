@@ -10,16 +10,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark(),
       home: Scaffold(
-        drawer: DrawerMainMenu(),
-        appBar: AppBar(actions: [
-          IconButton(
-            icon: const Icon(Icons.people_alt_outlined),
-            tooltip: 'Open user profile',
-            onPressed: () {
-              // handle the press
-            },
-          ),
-        ]),
+        appBar: AppBar(
+          title: Center(child: Text('Авторизация')),
+        ),
         body: Center(
           child: Container(
             decoration: BoxDecoration(
