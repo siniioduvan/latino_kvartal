@@ -5,19 +5,12 @@ class DrawerMainMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> drawerTextData = [
-      'Направления',
-      'Расписание',
-      'Преподаватели',
-      'Контакты',
+    final List<DrawerData> drawerData = [
+      DrawerData('/directionsPage', 'Направления'),
+      DrawerData('/shedulePage', 'Расписание'),
+      DrawerData('/teachersPage', 'Преподаватели'),
+      DrawerData('/contactsPage', 'Контакты')
     ];
-
-    List<Widget> drawerMenuData = [];
-
-    for (var text in drawerTextData) {
-      final widget = DrawerListTile(text: text);
-      drawerMenuData.add(widget);
-    }
 
     return Drawer(
       child: ListView(
@@ -28,7 +21,7 @@ class DrawerMainMenu extends StatelessWidget {
                   height: double.infinity,
                   width: double.infinity,
                   child: Image.asset("assets/images/main_logo.png"))),
-          Column(children: drawerMenuData),
+          Column(children: drawerData.map((data) => DrawerListTile(data: data)).toList()),
         ],
       ),
     );
@@ -38,12 +31,22 @@ class DrawerMainMenu extends StatelessWidget {
 ///todo СДЕЛАТЬ ИКОНКИ МЕНЮ!!! ЧЕРЕЗ АССЕТЫ ПРОЧИЕ ПРИКОЛЮХИ!
 
 class DrawerListTile extends StatelessWidget {
-  final String text;
+  final DrawerData data;
 
-  const DrawerListTile({super.key, required this.text});
+  const DrawerListTile({super.key, required this.data, });
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(title: Text(text), onTap: () {});
+    return ListTile(title: Text(data.label), onTap: () {
+      Navigator.of(context).pushNamed(data.url);
+    });
   }
 }
+
+class DrawerData {
+  final String url;
+  final String label;
+
+  DrawerData(this.url, this.label);
+}
+

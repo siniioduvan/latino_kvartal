@@ -33,7 +33,7 @@ class MainPage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pushNamed('/userProfile');
             },
-            icon: Icon(Icons.account_circle_outlined),
+            icon: const Icon(Icons.account_circle_outlined),
           ),
         ],
       ),

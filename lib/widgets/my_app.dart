@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:latino_kvartal/pages/auth_page.dart';
+import 'package:latino_kvartal/pages/in_drawer/contacts_page.dart';
+import 'package:latino_kvartal/pages/in_drawer/directions_page.dart';
+import 'package:latino_kvartal/pages/in_drawer/shedule_page.dart';
+import 'package:latino_kvartal/pages/in_drawer/teachers_page.dart';
 import 'package:latino_kvartal/pages/main_page.dart';
 import 'package:latino_kvartal/pages/user_profile.dart';
 
@@ -9,12 +13,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
+
+      ///todo сделать смену темы на черную/белую
+
+      //theme: ThemeData.dark(),
       initialRoute: '/authPage',
       routes: {
-        '/authPage': (context) => AuthPage(),
+        '/authPage': (context) => const AuthPage(),
         '/mainPage': (context) => MainPage(),
-        '/userProfile': (context) => UserProfile()
+        '/userProfile': (context) => const UserProfile(),
+        '/contactsPage': (context) => const ContactsPage(),
+        '/directionsPage': (context) => DirectionsPage(),
+        '/shedulePage': (context) => const ShedulePage(),
+        '/teachersPage': (context) =>  TeachersPage()
+
       },
     );
   }

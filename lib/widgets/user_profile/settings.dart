@@ -7,7 +7,6 @@ class Settings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15.0),
-      height: 400,
       width: double.infinity,
       color: Colors.grey[400],
       child: Column(

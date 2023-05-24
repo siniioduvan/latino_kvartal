@@ -5,6 +5,18 @@ class ShedulePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        titleSpacing: 55,
+        title: Text('Расписание занятий'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Text('Тут будет расписание занятий, не знаю как оформить'),
+          ],
+        ),
+      ),
+    );
   }
 }
