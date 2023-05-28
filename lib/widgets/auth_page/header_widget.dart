@@ -15,9 +15,9 @@ class HeaderWidget extends StatelessWidget {
           SizedBox(height: 20,),
           Text(
               'Латинский квартал',
-              style: TextStyle(fontSize: 36)
+              style: TextStyle(fontSize: 36, color: Colors.white),
           ),
-          Text('Войти:', style: TextStyle(fontSize: 24)),
+          Text('Войти:', style: TextStyle(fontSize: 24, color: Colors.white)),
           SizedBox(height: 60,),
         ],
       ),

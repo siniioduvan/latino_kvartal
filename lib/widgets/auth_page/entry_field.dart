@@ -51,6 +51,7 @@ class _EntryFieldState extends State<EntryField> {
         children: [
           const Text(
             'Email:',
+            style: TextStyle(color: Colors.white),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -76,6 +77,7 @@ class _EntryFieldState extends State<EntryField> {
           ),
           const Text(
             'Пароль',
+            style: TextStyle(color: Colors.white),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

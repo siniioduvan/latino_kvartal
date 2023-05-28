@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class TeachersData{
+class TeachersData {
   final String imageUrl;
   final String nameSurname;
   final String directions;
@@ -9,15 +9,34 @@ class TeachersData{
 }
 
 class TeachersPage extends StatelessWidget {
-   TeachersPage({Key? key}) : super(key: key);
+  TeachersPage({Key? key}) : super(key: key);
 
   final List<TeachersData> teachersData = [
-    TeachersData('assets/images/news_pics/1.jpeg', 'Курин Антон', 'Бразильский зук, бачата, сальса',),
-    TeachersData('assets/images/news_pics/1.jpeg', 'Не Антон', 'Литрбол, пьяное плавание',),
-    TeachersData('assets/images/news_pics/1.jpeg', 'Снова не Антон', 'Всё что угодно кроме танцев',),
-    TeachersData('assets/images/news_pics/1.jpeg', 'Кто нибудь еще', 'Профессиональное поедание пельмешков',),
-    TeachersData('assets/images/news_pics/1.jpeg', 'Вроде Настя', 'Так...это которая Настя то?',),
-
+    TeachersData(
+      'assets/images/news_pics/1.jpeg',
+      'Курин Антон',
+      'Бразильский зук, бачата, сальса',
+    ),
+    TeachersData(
+      'assets/images/news_pics/1.jpeg',
+      'Не Антон',
+      'Литрбол, пьяное плавание',
+    ),
+    TeachersData(
+      'assets/images/news_pics/1.jpeg',
+      'Снова не Антон',
+      'Всё что угодно кроме танцев',
+    ),
+    TeachersData(
+      'assets/images/news_pics/1.jpeg',
+      'Кто нибудь еще',
+      'Профессиональное поедание пельмешков',
+    ),
+    TeachersData(
+      'assets/images/news_pics/1.jpeg',
+      'Вроде Настя',
+      'Так...это которая Настя то?',
+    ),
   ];
 
   @override
@@ -29,9 +48,9 @@ class TeachersPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children:
-            teachersData.map((element) => TeachersCard(data: element)).toList()
-        ),
+            children: teachersData
+                .map((element) => TeachersCard(data: element))
+                .toList()),
       ),
     );
   }
@@ -41,7 +60,8 @@ class TeachersCard extends StatelessWidget {
   final TeachersData data;
 
   const TeachersCard({
-    super.key, required this.data,
+    super.key,
+    required this.data,
   });
 
   @override
@@ -55,16 +75,23 @@ class TeachersCard extends StatelessWidget {
             width: 120,
             child: Image.asset(data.imageUrl),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(data.nameSurname, style: TextStyle(fontSize: 30),),
-              Text(data.directions),
-            ],
-          )
+           Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    data.nameSurname,
+                    style: TextStyle(fontSize: 30),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                  ),
+                  SizedBox(height: 10),
+                  Text(data.directions, overflow: TextOverflow.ellipsis, maxLines: 2,),
+                ],
+              ),
+            ),
         ],
       ),
     );
   }
 }
-

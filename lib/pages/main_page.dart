@@ -78,9 +78,14 @@ class NewsPost extends StatelessWidget {
           children: [
             Text(data.text),
             const SizedBox(
-              height: 6,
+              height: 8,
             ),
-            Image.asset(data.image)
+            ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Image.asset(
+                data.image,
+              ),
+            ),
           ],
         ));
   }
