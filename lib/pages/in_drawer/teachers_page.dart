@@ -35,7 +35,7 @@ class TeachersPage extends StatelessWidget {
     TeachersData(
       'assets/images/news_pics/1.jpeg',
       'Вроде Настя',
-      'Так...это которая Настя то?',
+      'Если у вас нету Насти, значит у вас ненастье!',
     ),
   ];
 
